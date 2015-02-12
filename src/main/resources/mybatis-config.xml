@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <settings>
+    <setting name="logImpl" value="SLF4J"></setting>
+  </settings>
+
+  <typeAliases>
+    <typeAlias type="me.chanjar.mybatis.model.Book" alias="Book" />
+    <typeAlias type="me.chanjar.mybatis.model.Author" alias="Author" />
+  </typeAliases>
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:mem:test;INIT=create schema if not exists test\;runscript from '/Users/qianjia/workspace-os/mybatis-learn/src/main/resources/import.sql';DB_CLOSE_DELAY=-1"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+      </dataSource>
+    </environment>
+  </environments>
+
+  <mappers>
+    <mapper resource="BookMapper.xml"/>
+  </mappers>
+
+
+</configuration>
