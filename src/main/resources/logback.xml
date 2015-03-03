@@ -8,9 +8,9 @@
     </encoder>
   </appender>
 
-  <root level="info">
+  <root level="debug">
     <appender-ref ref="STDOUT" />
   </root>
 
-  <logger name="me.chanjar" level="info" />
+  <logger name="me.chanjar" level="debug" />
 </configuration>

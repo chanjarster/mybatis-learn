@@ -31,6 +31,8 @@ public class App {
 
       Book book2 = mapper.getBookWithAuthors(0);
       System.out.println(book2);
+
+      sqlSession.commit();
     } finally {
       sqlSession.close();
     }
