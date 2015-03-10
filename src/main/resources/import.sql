@@ -13,6 +13,8 @@ create table author (
   name varchar2(500)
 );
 
+
+# 测试数据无关紧要
 INSERT INTO BOOK VALUES (0, '2007-06-26', '(Theory in Practice (O''Reilly))', 'Beautiful Code: Leading Programmers Explain How They Think');
 INSERT INTO AUTHOR VALUES (0, 'Greg Wilson');
 INSERT INTO BOOK_AUTHOR VALUES (0, 0);
@@ -306,3 +308,4 @@ INSERT INTO BOOK_AUTHOR VALUES (70, 110);
 INSERT INTO BOOK VALUES (71, '2004-01-31', '', 'Das grosse Buch der vegetarischen K\374che.');
 INSERT INTO AUTHOR VALUES (111, 'Mahmud Darwish');
 INSERT INTO BOOK_AUTHOR VALUES (71, 111);
+commit;
