@@ -23,7 +23,7 @@ mybatis提供了两种cache类型：local cache和cache
 
 要特别注意的是，mybatis的local cache是无法关闭的。
 
-那么local cache干了什么？在默认配置情况下，mybatis会将同一session内的查询结果都放在local cache中，这样可以提高性能，避免多次hit到数据库。
+那么local cache干了什么？在默认配置情况下，mybatis会将同一session内的查询结果都放在local cache中，这样可以提高性能，避免每次都hit到数据库。
 
 那么cache干了什么呢？和local cache相对的，cache是跨session的，也就是说这个session中缓存的结果，在另外一个session中也能够用到。
 
