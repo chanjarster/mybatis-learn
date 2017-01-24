@@ -1,6 +1,6 @@
 # Local Cache陷阱
 
-相关文档：[mybatis configuration][mybatis configuration]
+相关文档：[mybatis configuration][mybatis configuration]，[mybatis mapper xml][mybatis mapper xml]
 
 相关代码：[src/main/java/localcache](src/main/java/localcache)，[src/test/java/localcache](src/test/java/localcache)
 
