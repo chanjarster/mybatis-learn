@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="me.chanjar.mybatis.mapper.BookMapper">
+<mapper namespace="spring.mapper.BookMapper">
 
-  <select id="getBook" resultType="Book">
+  <select id="getBook" resultType="spring.model.Book">
     select
       id,
       title,
@@ -37,12 +37,12 @@
     where book.id = #{id}
   </select>
 
-  <resultMap id="Book" type="Book">
+  <resultMap id="Book" type="spring.model.Book">
     <id property="id" column="book_id" />
     <result property="title" column="book_title" />
     <result property="subtitle" column="book_subtitle" />
     <result property="publicationDate" column="book_publication_date"></result>
-    <collection property="authors" ofType="Author">
+    <collection property="authors" ofType="spring.model.Author">
       <id property="id" column="author_id"/>
       <result property="name" column="author_name" />
     </collection>

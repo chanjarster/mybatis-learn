@@ -1,4 +1,4 @@
-package me.chanjar.mybatis.model;
+package spring.model;
 
 import java.util.Date;
 import java.util.HashSet;

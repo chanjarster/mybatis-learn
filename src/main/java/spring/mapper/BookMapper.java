@@ -1,12 +1,14 @@
-package me.chanjar.mybatis.mapper;
+package spring.mapper;
 
-import me.chanjar.mybatis.model.Book;
+import annotation.MybatisMapper;
+import spring.model.Book;
 
 import java.util.HashMap;
 
 /**
  * Created by qianjia on 15/2/11.
  */
+@MybatisMapper
 public interface BookMapper {
 
   Book getBook(Integer id);

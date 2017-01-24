@@ -1,4 +1,4 @@
-package me.chanjar.mybatis.model;
+package spring.model;
 
 public class Author {
 	private Integer id;
