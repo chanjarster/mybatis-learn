@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.chanjar.mybatislearn.inherit.statement.ChildMapper">
+
+  <!-- 覆盖 Parent.selectFoo的定义 -->
+  <select id="selectFoo" resultType="String">
+    SELECT 'Foo From Child'
+    FROM dual
+  </select>
+
+  <!-- 不覆盖 Parent.selectBar的定义 -->
+
+  <!-- 自己的 Child.selectLoo的定义 -->
+  <select id="selectLoo" resultType="String">
+    SELECT 'Loo From Child'
+    FROM dual
+  </select>
+
+</mapper>

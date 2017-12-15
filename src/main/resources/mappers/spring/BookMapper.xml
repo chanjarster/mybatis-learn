@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.chanjar.mybatislearn.spring.mapper.BookMapper">
+
+  <select id="getBook" resultType="me.chanjar.mybatislearn.spring.model.Book">
+    select
+      id,
+      title,
+      subtitle,
+      publication_date as "publicationDate"
+    from Book where id = #{id}
+  </select>
+
+
+  <select id="getBookMap" resultType="hashmap">
+    select
+      id,
+      title,
+      subtitle,
+      publication_date
+    from Book where id = #{id}
+  </select>
+
+  <select id="getBookWithAuthors" resultMap="Book">
+    select
+    book.id as book_id,
+    book.title as book_title,
+    book.subtitle as book_subtitle,
+    book.publication_date as book_publication_date,
+    author.id as author_id,
+    author.name as author_name
+    from Book as book
+    left join Book_author ba on ba.book_id=book.id
+    left join Author author on author.id=ba.author_id
+    where book.id = #{id}
+  </select>
+
+  <resultMap id="Book" type="me.chanjar.mybatislearn.spring.model.Book">
+    <id property="id" column="book_id" />
+    <result property="title" column="book_title" />
+    <result property="subtitle" column="book_subtitle" />
+    <result property="publicationDate" column="book_publication_date"></result>
+    <collection property="authors" ofType="me.chanjar.mybatislearn.spring.model.Author">
+      <id property="id" column="author_id"/>
+      <result property="name" column="author_name" />
+    </collection>
+  </resultMap>
+
+</mapper>

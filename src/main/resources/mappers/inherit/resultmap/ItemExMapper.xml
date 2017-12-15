@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.chanjar.mybatislearn.inherit.resultmap.ItemExMapper">
+
+  <!-- 如果这里不写一遍，就会用到ItemMapper.getById的定义，resultMap就不会是ItemEx-->
+  <select id="getById" resultMap="Item">
+    select
+    *
+    from item where id = #{id}
+  </select>
+
+  <resultMap id="Item" type="me.chanjar.mybatislearn.inherit.resultmap.ItemEx" autoMapping="true">
+    <id property="id" column="id" />
+  </resultMap>
+
+</mapper>
